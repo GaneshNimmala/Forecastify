@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville&family=Poppins:&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0px;
+    padding:0px 
+}
+body{
+    background-image:url('../images/bgimage.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    padding:20px 70px;
+    color: #fff;
+}
+.current-info{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+.date-container{
+    font-weight:100;
+}
+.date-container .time{
+    font-size:40px;
+    font-weight: 100
+}
+.date-container #am-pm{
+    font-size:10px;
+    margin-left:20px;
+}
+.date-container .date{
+    font-size:30px;
+}
+.place-container{
+    text-align:end;
+}
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 100;
+}
+.place-container .country{
+    font-size:20px;
+    font-weight:700;
+}
+.current-info .other    {
+    display:flex;
+    flex-direction:column;
+    background:rgba(24,24,27, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+
+.current-info .other .weather-item{
+    display:flex;
+    justify-content: space-between;
+}
+.current-info .other .weather-item:hover{
+    display:flex;
+    justify-content: space-between;
+
+}
+.future-forecast {
+    display: flex;
+    justify-content:center;
+    background:rgba(24,24,27, 0.8);
+    padding:25px;
+    color: #fff;
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+.future-forecast .weather-forecast {
+    display: flex;
+}
+.future-forecast .today{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.future-forecast .today .day{
+    padding: 5px 15px;
+    background:#3c3c44;
+    border-radius:50px;
+    text-align:center;
+}
+.future-forecast .today .temp{
+    font-size:15px;
+    padding-top:15px; 
+}
+.weather-forecast .weather-forecast-item{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content: center;
+margin: 0 10px;    
+border: 1px solid #eee;
+border-radius: 10px;
+padding: 15px;
+}
+.weather-forecast .weather-forecast-item .day{
+    padding: 5px 15px;
+    background:#3c3c44;
+    border-radius:50px;
+    text-align:center;
+}
+.weather-forecast .weather-forecast-item .temp{
+    font-weight: 100;
+}
+
+@media only screen and (max-width:730px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+    .container{
+        padding:20px;
+    }
+    .future-forecast .today .temp{
+        font-size:23px;
+    }
+    .place-container{
+        text-align: end;
+        margin-top: 15px;
+    }
+    .place-container .time-zone{
+        font-size: 20px;
+    }
+    .current-info .others{
+        padding: 12px;
+    }
+    .current-info .others .weather-items{
+        font-size: 14px;
+    }
+}
+.container .form-element{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+.container .form-element-child{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background:rgba(24,24,27, 0.2);
+    margin-bottom: 10px;
+}
+.container .form-element .form-fields{
+    margin:10px;
+    display: flex;
+}
+
+
+.label {
+    flex: 1;
+    text-align: Left;
+}
+
+.value {
+    flex: 2;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #000; /* Adding a line instead of a box */
+    width: 100%;
+    padding: 2px;
+    border-radius: 10px;
+}
+.placeSearch{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background:rgba(24,24,27, 0.2);
+    margin-bottom: 10px;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+    top:20px;
+    
+}
+
+.placeSearch {
+    padding: 20px; /* Add padding to the whole container */
+
+}
+
+.form-fields {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label {
+    flex: 1;
+    text-align: left; /* Adjust text alignment to start from left */
+}
+
+.value {
+    flex: 2;
+}
+
+.submit {
+    flex: 1;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding: 2px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.form-element .description{
+margin-top: 5px;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}

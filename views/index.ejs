@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whether ForeCat</title>
+    <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="current-info">
+            <div class="date-container">
+                <div class="time" id="time">
+                    <%=dateMinAmPm%>
+                </div>
+                <div class="date" id="date">
+                    <%= dayDate%>
+                </div>
+                <div class="other" id="current-weather-items">
+                    <div class="weather-item">
+                        <div>Humidity</div>
+                        <% if (locals.humidity) { %>
+                        <div><%=humidity%></div>
+                        <% } else { %>
+                    
+                        <% } %>
+                    </div>
+                    <div class="weather-item">
+                        <div>Temperature</div>
+                        <% if (locals.temp) { %>
+                        <div><%=temp%></div>
+                        <% } else { %>
+    
+                        <% } %>
+                    </div>
+                    <div class="weather-item">
+                        <div>Wind Speed</div>
+                        <% if (locals.windSpeed) { %>
+                        <div><%=windSpeed%></div>
+                        <% } else { %>
+                        
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="form-element">
+                <div class="description">
+                    <% if (locals.description) { %>
+                        <div><%=description%></div>
+                        <% } else { %>
+                            <div>Welcome ☁</div>
+                        <% } %>
+                </div>
+            <div class="form-element-child">
+            <form id="myForm" method="post">
+                <div class="form-fields">
+                    <div class="label">
+                        <label for="idInput">lat:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="idInput" name="lati" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-fields">
+                    <div class="label">
+                        <label for="secretInput">lon:</label>
+                    </div>
+                    <div class="value">
+                        <input type="text" id="secretInput" name="longi" autocomplete="off">
+                    </div>
+                </div>
+                
+                <div class="form-fields">
+                    <input id="get" type="submit" value="Submit" formaction="/get-whether">
+                </div>
+              
+              </form>
+            </div>
+            </div>
+            <div class="place-container">
+               <div>
+                    <div class="time-zone" id="time-zone">
+                        <% if (locals.placeName) { %>
+                        <div><%=placeName%></div>
+                        <% } else { %>
+                        <div>Asia/Kolkatta</div>
+                        <% } %>
+                    </div>
+                    <div id="country" class="country">
+                        IN
+                    </div>
+                    <div class="placeSearch">
+                        <form id="myForm" method="post">
+                            <div class="form-fields">
+                                <div class="label">
+                                <label for="idInput" >Place Name</label>
+                            </div>
+                            <div class="value">
+                                <input type="text" id="idInput" name="placeName" autocomplete="off">
+                            </div>
+                            <div class="submit">
+                                <input id="get" type="submit" value="Submit" 
+                                formaction="/get-whether-place">
+                            </div>   
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="future-forecast">
+        <div class="today" id="current-temp">
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">
+            <div class="other">
+                <div class="day">Tomorrow</div>
+                <!--<div class="temp">Night - &#176 c</div>-->
+                <% if (locals.tomorrowDescription9p) { %>
+                    <div class="temp">Night - <%=tomorrowDescription9p%> &#176c</div>
+                    <% } else { %>
+                
+                    <% } %>
+                
+            </div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day">12AM</div>
+                <% if (locals.icon12) { %>
+                    <img src="https://openweathermap.org/img/wn/<%=icon12p%>@2x.png" alt="weathericon" class="w-icon">
+                    <% } else { %>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">      
+                    <% } %>  
+                <!--<div class="temp">Night - 25.6&#176 c</div>-->
+                <% if (locals.tomorrowDescription12) { %>
+                    <div><%=tomorrowDescription12%></div>
+                    <% } else { %>
+                
+                    <% } %>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">3:00AM</div>
+                <% if (locals.icon3) { %>
+                    <img src="https://openweathermap.org/img/wn/<%=icon3%>@2x.png" alt="weathericon" class="w-icon">
+                    <% } else { %>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">      
+                    <% } %>  
+               <!-- <div class="temp">Night - 25.6&#176 c</div>
+                <div class="temp">Night - 25.6&#176 c</div>-->
+                <% if (locals.tomorrowDescription3) { %>
+                    <div><%=tomorrowDescription3%></div>
+                    <% } else { %>
+                
+                    <% } %>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">06:00AM</div>
+                <% if (locals.icon6) { %>
+                    <img src="https://openweathermap.org/img/wn/<%=icon6%>@2x.png" alt="weathericon" class="w-icon">
+                    <% } else { %>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">      
+                    <% } %>  
+               <!--<div class="temp">Night - 25.6&#176 c</div>
+                <div class="temp">Night - 25.6&#176 c</div>-->
+                <% if (locals.tomorrowDescription6) { %>
+                    <div><%=tomorrowDescription6%></div>
+                    <% } else { %>
+                
+                    <% } %>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">09:00AM</div>
+                <% if (locals.icon9) { %>
+                    <img src="https://openweathermap.org/img/wn/<%=icon9%>@2x.png" alt="weathericon" class="w-icon">
+                    <% } else { %>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">      
+                    <% } %>  
+                <!--<div class="temp">Night - 25.6&#176 c</div>
+                <div class="temp">Night - 25.6&#176 c</div>-->
+                <% if (locals.tomorrowDescription9) { %>
+                    <div><%=tomorrowDescription9%></div>
+                    <% } else { %>
+                
+                    <% } %>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">12:00PM</div>
+                <% if (locals.icon12p) { %>
+                    <img src="https://openweathermap.org/img/wn/<%=icon12p%>@2x.png" alt="weathericon" class="w-icon">
+                    <% } else { %>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">      
+                    <% } %>  
+               <!-- <div class="temp">Night - 25.6&#176 c</div>
+                <div class="temp">Night - 25.6&#176 c</div>-->
+                <% if (locals.tomorrowDescription12p) { %>
+                    <div><%=tomorrowDescription12p%></div>
+                    <% } else { %>
+                
+                    <% } %>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">03:00PM</div> 
+                    <% if (locals.icon3p) { %>
+                    <img src="https://openweathermap.org/img/wn/<%=icon3p%>@2x.png" alt="weathericon" class="w-icon">
+                    <% } else { %>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="weathericon" class="w-icon">      
+                    <% } %>  
+              <!--  <div class="temp">Night - 25.6&#176 c</div>
+                <div class="temp">Night - 25.6&#176 c</div>-->
+                <% if (locals.tomorrowDescription3p) { %>
+                    <div><%=tomorrowDescription3p%></div>
+                    <% } else { %>
+                
+                    <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
