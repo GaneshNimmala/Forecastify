@@ -1,11 +1,12 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+require("dotenv").config();
 
 const app = express();
 const port = 3000;
 //Add your API key here
-const yourApiKey = "b2063b04d0f16384a004d53a4b2d7f72";
+const yourApiKey = process.env.API_KEY;
 app.use(bodyParser.urlencoded({ extended: true }));
 const days = [
   "Sunday",
